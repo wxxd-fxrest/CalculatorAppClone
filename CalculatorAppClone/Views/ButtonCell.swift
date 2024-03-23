@@ -39,6 +39,18 @@ class ButtonCell: UICollectionViewCell {
         self.setupUI()
     }
     
+    public func setOperationSelected() {        
+        self.titleLabel.text = calculatorButton.title
+        self.backgroundColor = calculatorButton.color
+        
+        switch calculatorButton {
+        case .allClear, .pluseMines, .percentage:
+            self.titleLabel.textColor = .black
+        default:
+            self.titleLabel.textColor = .white
+        }
+    }
+ 
     // MARK: - UI Setup
     private func setupUI() {
         self.addSubview(titleLabel)
